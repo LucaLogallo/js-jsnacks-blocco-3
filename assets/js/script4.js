@@ -18,17 +18,21 @@ $(function(){
  */
 
   for(var i = 0; i < numGiocatori; i++){
-    var codiceGenerato = codice();
-    var mediaPuntiGenerato = 44;//messo 44 per provare
-    var percentualeSuccessoGenerato = 55; // messo a 55 per provare
+    var codiceGenerato = codice(); //dopo aggiungi il controllo per vedere se il codice generato non sia contenuto già nell'array squadra
+    var mediaPuntiGenerato = getRandomIntInclusive(0,50);//messo 44 per provare
+    //console.log(mediaPuntiGenerato);
+    var percentualeSuccessoGenerato = getRandomIntInclusive(0,100); // messo a 55 per provare
+    //console.log(percentualeSuccessoGenerato);
 
     var giocatore = {
-      'codice' = codiceGenerato,
-      'mediaPunti' = mediaPuntiGenerato,
-      'percentualeSuccesso' = percentualeSuccessoGenerato
+      'codice':  codiceGenerato,
+      'mediaPunti':  mediaPuntiGenerato,
+      'percentualeSuccesso': percentualeSuccessoGenerato+"%"
     };
+    console.log(giocatore.codiceGenerato);
 
     arrSquadra.push(giocatore);
+    console.log(arrSquadra);
   }
 
 
@@ -39,6 +43,7 @@ $(function(){
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Il max è incluso e il min è incluso
   }
+  
   //funzione che crea il codice giocatore
   function codice(){
     var arrLettere = []; //array che contiene 3 lettere generate randomicamente 
@@ -47,16 +52,16 @@ $(function(){
     var numPosLettera = 0;
     for( var i = 0; i < 3; i++){
       numPosLettera = getRandomIntInclusive(0,25);
-      console.log(numPosLettera);
+      //console.log(numPosLettera);
       arrLettere[i] = alfabetoMaiusc[numPosLettera];
-      console.log(alfabetoMaiusc[numPosLettera]);
-      console.log(arrLettere[i]);
+      //console.log(alfabetoMaiusc[numPosLettera]);
+      //console.log(arrLettere[i]);
       arrNumeri[i] =  getRandomIntInclusive(1,100);
-      console.log(arrNumeri[i]);
+      //console.log(arrNumeri[i]);
     }
     var arrConcat = []; //la concatenazione dell'array contenente lettere e quello contenente i numeri
     arrConcat = arrLettere.concat(arrNumeri);
-    console.log(arrConcat);
+    //console.log(arrConcat);
     return arrConcat;
   }
 
