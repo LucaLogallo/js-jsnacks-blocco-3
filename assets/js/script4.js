@@ -6,7 +6,44 @@ $(function(){
 
 
   // creare array che contiene la squadra di basket (quindi oggetti). cardinalità 12
-  var arrSquadra = []; //array che contiene i giocatori
+  var arrSquadra = [
+    {
+      'nome': 'Luca'
+    },
+    {
+      'nome': 'Marco'
+    },
+    {
+      'nome': 'Matteo'
+    },
+    {
+      'nome': 'Giovanni'
+    },
+    {
+      'nome': 'Giacomo'
+    },
+    {
+      'nome': 'Aldo'
+    },
+    {
+      'nome': 'Matteo'
+    },
+    {
+      'nome': 'Gabriele'
+    },
+    {
+      'nome': 'Antonio'
+    },
+    {
+      'nome': 'Giuseppe'
+    },
+    {
+      'nome': 'Vincenzo'
+    },
+    {
+      'nome': 'Andrea'
+    }
+  ]; //array che contiene i giocatori
   var numGiocatori = 12;  //numero di giocatori della squadra(cardinalità di arrSquadra)
   var alfabetoMaiusc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   //creo il prototipo di oggetto del giocatore
@@ -24,17 +61,14 @@ $(function(){
     var percentualeSuccessoGenerato = getRandomIntInclusive(0,100); // messo a 55 per provare
     //console.log(percentualeSuccessoGenerato);
 
-    var giocatore = {
-      'codice':  codiceGenerato,
-      'mediaPunti':  mediaPuntiGenerato,
-      'percentualeSuccesso': percentualeSuccessoGenerato+"%"
-    };
-    console.log(giocatore.codiceGenerato);
-
-    arrSquadra.push(giocatore);
-    console.log(arrSquadra);
+    
+      arrSquadra[i].codice =  codiceGenerato,
+      arrSquadra[i].mediaPunti =  mediaPuntiGenerato,
+      arrSquadra[i].percentualeSuccesso = percentualeSuccessoGenerato+"%"
+   
   }
-
+  
+  console.log(arrSquadra);
 
   /* FUNZIONI */
   //funzione random che include il num minimo e il num massimo
