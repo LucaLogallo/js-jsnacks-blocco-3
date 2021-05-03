@@ -29,20 +29,20 @@ $(()=>{
       arrAnimali.push(animale);
     }
 
-    arrAnimali.forEach((animale)=>{
-      console.log(animale);
-    });
-
-    const mammiferi = arrAnimali.filter((animale)=>{animale.classe ==='mammiferi'});
-    mammiferi.forEach((animale)=>{
-      console.log(animale);
-    });
-  }else{
-
-    const mammiferi = arrAnimali.filter((animale)=>{animale.classe==='mammiferi'});
-
-    mammiferi.forEach((animale)=>{
-      console.log(animale);
-    });
   }
+
+  console.log(arrAnimali);
+  console.log("--------------")
+  arrAnimali.forEach((animale)=>{
+    console.log(animale);
+    console.log("----------------");
+  })
+  const mammiferi = arrAnimali.filter((animale)=>animale.classe ==='mammiferi');
+
+  console.log(mammiferi);
+  console.log("......................")
+  mammiferi.forEach((animale)=>{
+    console.log(animale)
+    console.log("----------");
+  });
 });
