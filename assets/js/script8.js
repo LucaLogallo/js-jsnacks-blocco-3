@@ -25,6 +25,10 @@ $(() =>{
   
   const arrFinale = arrLower.map((stringa) =>{//prendo l'array di stringhe che ho trasformato in tutte stringhe minuscole e poi richiamo la funzione che mi fa il capitalize first letter
     return capitalizeFirstLetter(stringa);
+  });
+
+  arrFinale.forEach((stringa) =>{
+    console.log(stringa);
   })
 
   
